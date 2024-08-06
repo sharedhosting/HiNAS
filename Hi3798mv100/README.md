@@ -1,6 +1,6 @@
-# Hi3798mv100 无线驱动
+# Hi3798mv100 无线驱动安装
 
-### 安装wifi驱动
+#### 检测
 
 首先`lsusb` 命令查看是否支持无线网卡，并记下网卡型号比如 **RTL8188ETV** 
 
@@ -19,21 +19,18 @@ Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
 ```
 cd /tmp
+wget https://github.com/sharedhosting/HiNAS/blob/main/Hi3798mv100/hi_kernel-mv100-0808.bin
 dd if=hi_kernel-mv100-0808.bin of=/dev/mmcblk0p6
 reboot
 ```
 
-#### 安装驱动
+#### 使用脚本安装驱动
 
-**比如驱动文件的路径是/tmp/rtl8188ftv-0403.tar.gz**
+下载脚本并给权限
 
 ```
 cd /tmp
-```
-
-**2.给脚本运行权限**
-
-```
+wget https://github.com/sharedhosting/HiNAS/blob/main/Hi3798mv100/wifi_install.sh
 chmod a+x wifi_install.sh
 ```
 
